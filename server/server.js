@@ -5,7 +5,7 @@ const cors = require('cors');
 const tasksRoute = require('./routes/Task');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: process.env.FRONTEND_URL }));
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
